@@ -277,14 +277,14 @@ MonoBehaviour:
   _mediaReference: {fileID: 11400000, guid: 4844808027b36464d9a0540bf1de6663, type: 2}
   _mediaPath:
     _pathType: 3
-    _path: Video/Peppa_Pig_s01e14_My_Cousin_Chloe.mp4
+    _path: Resources/Video/Peppa_Pig_s01e14_My_Cousin_Chloe.mp4
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 1
-  _loop: 0
+  _autoPlayOnStart: 0
+  _loop: 1
   _audioVolume: 1
   _audioBalance: 0
   _audioMuted: 0
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 257072753}
   - component: {fileID: 257072752}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -676,6 +676,7 @@ GameObject:
   - component: {fileID: 911019613}
   - component: {fileID: 911019612}
   - component: {fileID: 911019611}
+  - component: {fileID: 911019614}
   m_Layer: 5
   m_Name: 15
   m_TagString: Untagged
@@ -785,6 +786,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911019609}
   m_CullTransparentMesh: 1
+--- !u!114 &911019614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911019609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f147339e4a48d04db67cf87fad0724f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &916024872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916024874}
+  - component: {fileID: 916024873}
+  m_Layer: 0
+  m_Name: ButtonClickScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &916024873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916024872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f147339e4a48d04db67cf87fad0724f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &916024874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916024872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &926738389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,7 +1438,7 @@ GameObject:
   - component: {fileID: 1367758739}
   - component: {fileID: 1367758738}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PlayPauseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1451,7 +1507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367758739}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 916024873}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: PlayPause
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 889f4b948a1c24b4c937132a726948bb, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1367758739
 MonoBehaviour:
   m_ObjectHideFlags: 0
