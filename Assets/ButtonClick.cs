@@ -32,8 +32,14 @@ public class ButtonClick : MonoBehaviour
         }
     }
 
-    public void ChangeVideo()
+    public void ChangeVideo(string Path)
     {
-
+        var newMediaPath = new MediaPath(Path, MediaPathType.AbsolutePathOrURL);
+        if (newMediaPath == _mediaPlayer.MediaPath){
+            return;
+        }
+        _mediaPlayer.OpenMedia(newMediaPath, autoPlay:false);
+        _isPlaying = false;
+        _playPauseButton.image.sprite = Resources.Load<Sprite>("UI/Play");
     }
 }
