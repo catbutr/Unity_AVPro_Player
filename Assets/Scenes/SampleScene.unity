@@ -215,7 +215,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Assets/Resources/Video/Peppa_Pig_s01e18_Mummy_Pig's_Birthday.mp4
+          m_StringArgument: "Assets/Resources/Video/\u0421\u0432\u0438\u043D\u043A\u0430
+            \u041F\u0435\u043F\u043F\u0430 18. \u0414\u0435\u043D\u044C \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F
+            \u043C\u0430\u043C\u044B \u0421\u0432\u0438\u043D\u043A\u0438/Peppa_Pig_s01e18_Mummy_Pig's_Birthday.mp4"
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &78960624
@@ -238,7 +240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7cd1c3cdcfb392547ba5051599601cf0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d413e42f69d51a543bbfe2a671206ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -288,8 +290,10 @@ MonoBehaviour:
   _mediaSource: 1
   _mediaReference: {fileID: 11400000, guid: 4844808027b36464d9a0540bf1de6663, type: 2}
   _mediaPath:
-    _pathType: 3
-    _path: Resources/Video/Peppa_Pig_s01e14_My_Cousin_Chloe.mp4
+    _pathType: 0
+    _path: "Assets/Resources/Video/\u0421\u0432\u0438\u043D\u043A\u0430 \u041F\u0435\u043F\u043F\u0430
+      14. \u041C\u043E\u044F \u0434\u0432\u043E\u044E\u0440\u043E\u0434\u043D\u0430\u044F
+      \u0441\u0435\u0441\u0442\u0440\u0430 \u0425\u043B\u043E\u044F/Peppa_Pig_s01e14_My_Cousin_Chloe.mp4"
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
@@ -325,8 +329,20 @@ MonoBehaviour:
     overrideDecryptionKey: 
   _events:
     m_PersistentCalls:
-      m_Calls: []
-  _eventMask: -1
+      m_Calls:
+      - m_Target: {fileID: 916024873}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: VideoFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _eventMask: 16
   _pauseMediaOnAppPause: 1
   _playMediaOnAppUnpause: 1
   _persistent: 0
@@ -575,6 +591,7 @@ RectTransform:
   - {fileID: 1210395790}
   - {fileID: 1367758737}
   - {fileID: 1695228945}
+  - {fileID: 661661057}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -583,6 +600,85 @@ RectTransform:
   m_AnchoredPosition: {x: 550.5, y: 239}
   m_SizeDelta: {x: 1363, y: 820}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &661661056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661661057}
+  - component: {fileID: 661661059}
+  - component: {fileID: 661661058}
+  m_Layer: 5
+  m_Name: VideoTitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &661661057
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661661056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 257072755}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -260, y: -230}
+  m_SizeDelta: {x: 500, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &661661058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661661056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: bc8bd85684a7e5c4788cfba362a3b7dd, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &661661059
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661661056}
+  m_CullTransparentMesh: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +865,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Assets/Resources/Video/Peppa_Pig_s01e15_Daddy_Loses_His_Glasses.mp4
+          m_StringArgument: "Assets/Resources/Video/\u0421\u0432\u0438\u043D\u043A\u0430
+            \u041F\u0435\u043F\u043F\u0430 15. \u041F\u0430\u043F\u0430 \u043F\u043E\u0442\u0435\u0440\u044F\u043B
+            \u043E\u0447\u043A\u0438/Peppa_Pig_s01e15_Daddy_Loses_His_Glasses.mp4"
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &911019612
@@ -1354,7 +1452,9 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Assets/Resources/Video/Peppa_Pig_s01e14_My_Cousin_Chloe.mp4
+          m_StringArgument: "Assets/Resources/Video/\u0421\u0432\u0438\u043D\u043A\u0430
+            \u041F\u0435\u043F\u043F\u0430 14. \u041C\u043E\u044F \u0434\u0432\u043E\u044E\u0440\u043E\u0434\u043D\u0430\u044F
+            \u0441\u0435\u0441\u0442\u0440\u0430 \u0425\u043B\u043E\u044F/Peppa_Pig_s01e14_My_Cousin_Chloe.mp4"
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1213904226
