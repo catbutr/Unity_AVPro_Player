@@ -5,13 +5,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using RenderHeads.Media.AVProVideo;
 
-public class ButtonClick : MonoBehaviour
+public class PlayerScripts : MonoBehaviour
 {
+    /// <summary>
+    /// Проигрыватель
+    /// <summary>
     private MediaPlayer _mediaPlayer = null;
+
+    /// <summary>
+    /// Кнопка проигрывателя
+    /// <summary>
     private Button _playPauseButton = null;
+
+    /// <summary>
+    /// Подпись к проигрываемому видео
+    /// <summary>
     private Text _videoTitleText = null;
+
+    /// <summary>
+    /// Проигрывается ли видеозапись
+    /// <summary>
     private bool _isPlaying = false;
-    private Text textToEdit;
+
+    /// <summary>
+    /// Что происходит при запуске
+    /// <summary>
     void Start()
     {
         GameObject _playerObject = GameObject.Find("MediaPlayer");
@@ -23,20 +41,42 @@ public class ButtonClick : MonoBehaviour
         _videoTitleText.text = new DirectoryInfo(Path.GetDirectoryName(_mediaPlayer.MediaPath.Path)).Name;
     }
 
+    /// <summary>
+    /// Работа кнопки Play/Pause
+    /// <summary>
     public void PlayPause()
     {
         if (!_isPlaying){
             _mediaPlayer.Play();
-            _isPlaying = true;
-            _playPauseButton.image.sprite = Resources.Load<Sprite>("UI/Pause");
+            PlayVideo();
         }
         else{
             _mediaPlayer.Pause();
-            _isPlaying = false;
-            _playPauseButton.image.sprite = Resources.Load<Sprite>("UI/Play");
+            PauseVideo();
         }
     }
 
+    /// <summary>
+    /// Подготовка интерфейса и переменных к запуску видео
+    /// <summary>
+    public void PlayVideo()
+    {
+        _isPlaying = true;
+        _playPauseButton.image.sprite = Resources.Load<Sprite>("UI/Pause");
+    }
+
+    /// <summary>
+    /// Подготовка интерфейса и переменных к паузе
+    /// <summary>
+    public void PauseVideo()
+    {
+        _isPlaying = false;
+        _playPauseButton.image.sprite = Resources.Load<Sprite>("UI/Play");
+    }
+
+    /// <summary>
+    /// Смена проигрываемого ролика
+    /// <summary>
     public void ChangeVideo(string path)
     {
         var newMediaPath = new MediaPath(path, MediaPathType.AbsolutePathOrURL);
@@ -44,14 +84,7 @@ public class ButtonClick : MonoBehaviour
             return;
         }
         _mediaPlayer.OpenMedia(newMediaPath, autoPlay:false);
-        _isPlaying = false;
-        _playPauseButton.image.sprite = Resources.Load<Sprite>("UI/Play");
+        PauseVideo();
         _videoTitleText.text = new DirectoryInfo(Path.GetDirectoryName(path)).Name;
-    }
-
-    public void VideoFinished()
-    {
-        _isPlaying = false;
-        _playPauseButton.image.sprite = Resources.Load<Sprite>("UI/Play");
     }
 }
